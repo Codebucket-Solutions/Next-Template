@@ -1,0 +1,13 @@
+services:
+  NextJS-Template:
+    image: harbor.internal.codebuckets.in/NextJS-Template/prod
+    container_name: NextJS-Template
+    restart: unless-stopped
+    networks:
+      - ingress-network
+    env_file:
+      - /home/ENV/NextJS-Template/.env
+
+networks:
+  ingress-network:
+    external: true

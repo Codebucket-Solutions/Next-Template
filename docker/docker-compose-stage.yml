@@ -1,0 +1,13 @@
+services:
+  NextJS-Template:
+    image: harbor.internal.codebuckets.in/NextJS-Template/stage
+    container_name: NextJS-Template
+    restart: unless-stopped
+    networks:
+      - database-network
+    env_file:
+      - /home/ENVNextJS-Template/.env
+
+networks:
+  database-network:
+    external: true
